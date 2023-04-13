@@ -23,9 +23,11 @@ provider "azurerm" {
 
 
 resource "azurerm_resource_group" "rg" {
-  count = 3
+  count = length(var.resource_group_name_creater)
   location = var.resource_group_location
-  name     = var.resource_group_name_creater.${count.index}
+  name     = var.resource_group_name_creater[count.index]
+
+
 }
 
 

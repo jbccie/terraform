@@ -9,9 +9,10 @@ variable "resource_group_name_prefix" {
 }
 
 variable "resource_group_name_creater" {
-default     = "jaskaran"
+default     = ["jaskaran", "singh", "Bahia"]
 description = "create RG from the list"
-type = string
+type = list(string)
+
 
 
 
