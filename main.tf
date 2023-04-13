@@ -22,10 +22,10 @@ provider "azurerm" {
 
 
 
-resource "azurerm_resource_group" "rg" {
-  count = length(var.resource_group_name_creater)
+resource "azurerm_resource_group" "example" {
+  count = length(var.resource_group_name)
   location = var.resource_group_location
-  name     = var.resource_group_name_creater[count.index]
+  name     = var.resource_group_name[count.index]
 
 
 }
