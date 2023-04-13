@@ -20,12 +20,13 @@ provider "azurerm" {
   features {}
 }
 
-resource "random_pet" "rg_name" {
-  prefix = var.resource_group_name_prefix
-}
+
 
 resource "azurerm_resource_group" "rg" {
+  count = 3
   location = var.resource_group_location
-  name     = random_pet.rg_name.id
+  name     = var.resource_group_name_creater.${count.index}
 }
+
+
 ##tssssss
